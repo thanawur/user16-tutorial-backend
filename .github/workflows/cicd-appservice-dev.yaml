@@ -80,12 +80,12 @@ jobs:
     needs: [unitest,analyze]
     environment:
       name: dev
-      url: https://github.com/thanawur/thanawur-pipeline/actions/workflows/dev-tutorial-backend-deploy.yml
+      url: https://github.com/thanawur/user16-pipeline/actions/workflows/dev-tutorial-backend-deploy.yml
     steps:
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
-        repository: thanawur/thanawur-pipeline
-        event-type: thanawur-tutorial-be-cd-dev
+        repository: thanawur/user16-pipeline
+        event-type: user16-tutorial-be-cd-dev
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
